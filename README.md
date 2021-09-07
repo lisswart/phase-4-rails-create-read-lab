@@ -31,15 +31,22 @@ To set up your backend, run:
 $ bundle install
 ```
 
-To see how the React application and Rails API are interacting, you can run both
-the Rails application and the React application together by running:
+To see how the React application and Rails API are interacting, you can run the
+Rails application in one terminal by running:
 
 ```console
-$ rails start
+$ rails s
 ```
 
-This will run a Rake task that will start both the Rails app and the React app.
-You must use `rails start` (not `rails s`) to start both applications together!
+Then, [open another terminal][new terminal] and run React:
+
+```console
+$ npm start --prefix client
+```
+
+[new terminal]: https://code.visualstudio.com/docs/editor/integrated-terminal#_managing-terminals
+
+Each application will run on its own port on `localhost`:
 
 - React: [http://localhost:4000](http://localhost:4000)
 - Rails: [http://localhost:3000](http://localhost:3000)
@@ -155,7 +162,7 @@ Response Body
 }
 ```
 
-Once all the tests are passing, start up the React app (using `rails start`) and
-explore the functionality to see how the routes you created are being used.
+Once all the tests are passing, start up the React app and explore the
+functionality to see how the routes you created are being used.
 
 [create-react-app proxying]: https://create-react-app.dev/docs/proxying-api-requests-in-development/
